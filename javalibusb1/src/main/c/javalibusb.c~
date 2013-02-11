@@ -696,7 +696,7 @@ enum transferType {
 
 static jint bulk_or_interrupt_transfer(enum transferType transferType, JNIEnv *env, jclass klass, jlong libusb_device_handle_ptr, jbyte bEndpointAddress, jbyteArray bytes, jint offset, jint length, jlong timeout)
 {
-    int err = 0;
+    int err;
     struct libusb_device_handle *handle = (struct libusb_device_handle *)(POINTER_STORAGE_TYPE)libusb_device_handle_ptr;
     uint8_t* data = NULL;
     int transferred;
